@@ -1,6 +1,6 @@
 # Merge-Objects
 
-Merge JS objects into a single one.
+The spread operator (...) OR the `Object.assign()` method, but with the ability to remove/keep duplicates.
 
 # Example
 
