@@ -1,6 +1,12 @@
 # Merge-Objects
 
-The spread operator (...) OR the `Object.assign()` method, but with the ability to remove/keep duplicates.
+### Just like:
+
+* the spread operator (...).
+
+* The `Object.assign()` method.
+
+===> But with the option to remove duplicates <===
 
 # Example
 
