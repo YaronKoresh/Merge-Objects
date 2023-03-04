@@ -1,4 +1,4 @@
-# Merge-Objects
+# MergeObjects
 
 ### Just like:
 
