@@ -1,0 +1,16 @@
+{
+  "name": "MergeObjects.js",
+  "main": "./MergeObjects.js",
+  "version": "1.0.0",
+  "description": "Manage a NodeJS Database within text files - without SQL",
+  "author": "Yaron Koresh <aharonkoresh1@gmail.com>",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/YaronKoresh/MergeObjects.js/raw/master/LICENSE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://YaronKoresh@github.com/YaronKoresh/MergeObjects.js.git"
+  },
+  "dependencies": { }
+}
