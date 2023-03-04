@@ -2,7 +2,7 @@
   "name": "MergeObjects.js",
   "main": "./MergeObjects.js",
   "version": "1.0.0",
-  "description": "Manage a NodeJS Database within text files - without SQL",
+  "description": "Merge JS objects into a single one.",
   "author": "Yaron Koresh <aharonkoresh1@gmail.com>",
   "license": {
     "type": "MIT",
