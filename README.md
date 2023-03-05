@@ -11,7 +11,7 @@
 # Example
 
 ```
-var MergeObjects = require("./MergeObjects.js");
+var MergeObjects = require("@yaronkoresh/merge-objects");
 
 var temp1 = MergeObjects(false,{a:1},{a:1},{b:3});
 // temp1 is { a:[1,1] , b:3 }
