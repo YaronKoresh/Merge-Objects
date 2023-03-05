@@ -6,7 +6,7 @@
 
 * The `Object.assign()` method.
 
-===> But with the option to remove duplicates <===
+### But with the option to remove duplicates
 
 # Example
 
