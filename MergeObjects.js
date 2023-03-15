@@ -1,4 +1,12 @@
-const MergeObjects = function( removeDuplicateValues , useOriginalIndexes , ...objs ){
+const MergeObjects = function( objs , settings = {} ){
+	if(typeof settings.placeholder == "undefined"){
+		settings.placeholder = false;
+	}
+	if(typeof settings.merge == "undefined"){
+		settings.merge = false;
+	}
+	let useOriginalIndexes = !!settings.placeholder;
+	let removeDuplicateValues = !!settings.merge;
 	let res = {};
 	let globalIndex = 0;
 	let temp = objs.map(
@@ -16,9 +24,10 @@ const MergeObjects = function( removeDuplicateValues , useOriginalIndexes , ...o
 						}
 					} else if( typeof res[key] == "undefined" ){
 						if(useOriginalIndexes){
-							res[key] = [newValue];
+							res[key] = [];
+							res[key][globalIndex] = newValue;
 						} else {
-							res[key] = newValue;
+							res[key] = [newValue];
 						}
 					} else {
 						if( !(removeDuplicateValues && res[key]==(newValue)) ){
@@ -38,13 +47,16 @@ const MergeObjects = function( removeDuplicateValues , useOriginalIndexes , ...o
 	if(useOriginalIndexes){
 		let temp3 = Object.keys(res).map(
 			function(key){
-				let dif = globalIndex - res[key].length;
-				for( let i = 0 ; i < dif.length ; i++ ){
-					res[key].push(null);
+				let arr = Array(globalIndex).fill(settings.placeholder);
+				for( let i = 0 ; i < res[key].length ; i++ ){
+					if(res[key][i]){
+						arr[i] = res[key][i];
+					}
 				}
+				res[key] = arr;
 			}
 		);
 	}
 	return res;
 }
-exports = MergeObjects;
+module.exports = MergeObjects;
