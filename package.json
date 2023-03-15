@@ -1,7 +1,7 @@
 {
   "name": "@yaronkoresh/merge-objects",
   "main": "./MergeObjects.js",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Merge JS objects into a single one.",
   "author": "Yaron Koresh <aharonkoresh1@gmail.com>",
   "scripts": {
