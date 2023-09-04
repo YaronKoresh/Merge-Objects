@@ -1,52 +1,98 @@
-# MergeObjects
 
-### Just like:
+# merge-objects v3.0.0 
 
-* the spread operator (...).
+## A small tools for the community, made by: Yaron Koresh, Israel.
 
-* The `Object.assign()` method.
+### This project is licensed under MIT open-source license.
 
-### But with two new abilities:
+* merge-objects utility, is a deep merging function.
 
-* Remove duplicates.
+* An optional duplicates removal.
 
-* Preserve the objects indexes (instead of just pushing into the array)
+* The source objects are NOT being changed (Objects are not being passed "by reference").
 
 # Example
 
 ```
-let MergeObjects = require("@yaronkoresh/merge-objects");
-let arr = [{a:1},{b:3},{a:1},{b:4}];
+// Require/Import this package
 
-let sett2 = {
-  merge: true
-}
-let sett3 = {
-  placeholder: "I fill empty",
-  merge: true
-}
-let sett4 = {
-  placeholder: "Nothing here!"
-}
+import "merge-objects" // or: require("merge-objects");
 
-// Default value settings.placeholder is: false
-// Default value settings.merge is: false
+// Now you have a new global async function, called: "DeepMerge"
 
-// Here, no ability was activated!
-let temp1 = MergeObjects(arr);
-// temp1 is { a:[1,1] , b:[3,4] }
+// First variable
+let a = {
+	a:{
+		b: [1,2,3],
+		c: {
+			a:1,
+			b:2
+		}
+	}
+};
 
-// Here, we remove duplicates!
-let temp2 = MergeObjects(arr,sett2);
-// temp2 is { a:[1] , b:[3,4] }
+// Second variable
+let b = {
+	a:{
+		b: [1,2,3],
+		c: {
+			a:2,
+			b:2
+		}
+	}
+};
 
-// Here, we remove duplicates & preserve the original indexes!
-let temp3 = MergeObjects(arr,sett3);
-// temp3 is { a:[1,'I fill empty','I fill empty','I fill empty'] , b:['I fill empty',3,'I fill empty',4] }
+// Third variable
+let c = 4;
 
-// Here, we only preserve the original indexes, but keep any duplicates!
-let temp4 = MergeObjects(arr,sett4);
-// temp4 is { a:[1,'Nothing here!',1,'Nothing here!'] , b:['Nothing here!',3,'Nothing here!',4] }
+// Deep Merging while duplicates are included
+const dup = await DeepMerge( "Dup", a, b, c );
+
+// Deep Merging while duplicates are removed from arrays
+// array with 1 element left, will not be returned as Array
+const unq = await DeepMerge( "Unq", a, b, c );
+
+console.log(dup);
+// [
+//	{
+//		a:{
+//			b: [1,2,3,1,2,3],
+//			c: {
+//				a: [1, 2],
+//				b: [2, 2]
+//			}
+//		}
+//	},
+//	4
+// ]
+
+console.log(unq);
+// [
+//	{
+//		a:{
+//			b: [1,2,3],
+//			c: {
+//				a: [1, 2],
+//				b: 2
+//			}
+//		}
+//	},
+//	4
+// ]
 ```
 
-Enjoy!
+---
+
+The "DeepMerge" global async function, has a spesific syntax, of: `action` & `parameter(s)`;
+
+We have 2 actions:
+
+# Dup:
+
+* All object are being deeply merged & duplicates values are includes.
+
+# Unq:
+
+* All object are being deeply merged & duplicates values are removed (duplicates will be returned only 1 time).
+
+# Enjoy!
