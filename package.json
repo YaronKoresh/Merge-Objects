@@ -1,5 +1,5 @@
 {
-  "name": "secure-caesar",
+  "name": "@yaronkoresh/merge-objects",
   "main": "./index.js",
   "version": "3.0.0",
   "description": "A deep merging utility, for any type of data (not just Object).",

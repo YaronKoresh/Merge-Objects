@@ -1,5 +1,5 @@
 
-# merge-objects v3.0.0 
+# @yaronkoresh/merge-objects v3.0.0 
 
 ## A small tools for the community, made by: Yaron Koresh, Israel.
 
@@ -16,7 +16,7 @@
 ```
 // Require/Import this package
 
-import "merge-objects" // or: require("merge-objects");
+import "@yaronkoresh/merge-objects" // or: require("@yaronkoresh/merge-objects");
 
 // Now you have a new global async function, called: "DeepMerge"
 
