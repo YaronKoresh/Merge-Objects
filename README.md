@@ -1,7 +1,7 @@
 
 # @yaronkoresh/merge-objects v3.0.0 
 
-## A small tools for the community, made by: Yaron Koresh, Israel.
+## A small tool for the community, made by: Yaron Koresh, Israel.
 
 ### This project is licensed under MIT open-source license.
 
